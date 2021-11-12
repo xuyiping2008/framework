@@ -1,8 +1,8 @@
 package main
 
 import (
-	"gee/day7-panic/ping"
 	"net/http"
+	"web/ping"
 )
 
 func main() {
