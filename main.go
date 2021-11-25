@@ -1,13 +1,14 @@
 package main
 
 import (
+	"framework/web/ping"
 	"net/http"
-	"web/ping"
 )
 
 func main() {
 
 	r := ping.Default()
+
 	r.GET("/panic", func(c *ping.Context) {
 		names := []string{"ping"}
 		c.String(http.StatusOK, names[100])
