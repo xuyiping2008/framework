@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+
+	log "github.com/AlexStocks/log4go"
 )
 
 type H map[string]interface{}
@@ -58,6 +60,7 @@ func (c *Context) SetHeader(key string, value string) {
 func (c *Context) String(code int, format string, values ...interface{}) {
 	c.SetHeader("Content-Type", "text/plain")
 	c.Status(code)
+	log.Info("hello")
 	c.Writer.Write([]byte(fmt.Sprintf(format, values...)))
 }
 
